@@ -109,103 +109,7 @@ AI Email Generator/
 6. **Click "Insert Reply"** to add it to your email draft
 7. **Send** the email as usual
 
-## API Documentation
 
-### Endpoint: `/generate-reply`
-
-**Method:** `POST`
-
-**Request Body:**
-```json
-{
-  "emailText": "The email you want to reply to",
-  "tone": "professional"
-}
-```
-
-**Response:**
-```json
-{
-  "reply": "Generated email reply text"
-}
-```
-
-**Available Tones:**
-- `professional`
-- `friendly`
-- `formal`
-- `casual`
-- `urgent`
-
-## Configuration
-
-### Environment Variables (`.env`)
-
-```
-GEMINI_API_KEY=your_api_key_here          # Required: Your Google Gemini API key
-GEMINI_MODEL=gemini-2.5-flash             # Optional: Model to use (default: gemini-2.5-flash)
-```
-
-### Backend Server Settings
-
-To run on a different port:
-```bash
-uvicorn main:app --reload --port 8080
-```
-
-## Testing Your Setup
-
-Run the test script to verify your API key:
-```bash
-python test_api.py
-```
-
-Expected output:
-```
-✓ API key found
-✓ Client initialized
-✓ API call successful
-✓ Your Gemini API key is working perfectly!
-```
-
-## Security Notes
-
-- 🔒 Keep your `.env` file private - never commit it to GitHub
-- 🔒 Never share your Gemini API key publicly
-- 🔒 Add `.env` to `.gitignore` before pushing to GitHub
-
-## Requirements
-
-See `Backendpy/requirements.txt`:
-- fastapi
-- uvicorn
-- python-dotenv
-- google-genai
-- pydantic
-
-## Troubleshooting
-
-### Extension doesn't appear in toolbar
-- Reload the extension in `chrome://extensions/`
-- Ensure Developer mode is enabled
-- Check browser console for errors
-
-### API connection failed
-- Verify FastAPI server is running (`http://localhost:8000`)
-- Check if port 8000 is available
-- Ensure CORS middleware is enabled in `main.py`
-
-### Invalid API key error
-- Double-check your Gemini API key in `.env`
-- Ensure there are no extra spaces or quotes
-- Regenerate the key from Google AI Studio if needed
-
-### Model not found error
-- Ensure your Gemini API key has access to the selected model
-- Run `list_models.py` to see available models:
-  ```bash
-  python list_models.py
-  ```
 
 ## Future Enhancements
 
@@ -218,25 +122,10 @@ See `Backendpy/requirements.txt`:
 - [ ] Dark mode for extension UI
 - [ ] Settings panel for customization
 
-## Contributing
 
-Contributions are welcome! Feel free to fork, modify, and submit pull requests.
-
-## License
-
-This project is open source and available under the MIT License.
 
 ## Disclaimer
 
 This tool is designed to help draft emails. Always review AI-generated content before sending. The authors are not responsible for any miscommunication or errors in generated emails.
 
-## Support
 
-For issues, questions, or suggestions:
-1. Check the troubleshooting section above
-2. Review the Google Gemini API documentation
-3. Open an issue on GitHub
-
----
-
-**Made with ❤️ using Google Gemini AI**
