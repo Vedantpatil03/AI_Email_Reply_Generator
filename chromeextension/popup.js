@@ -8,7 +8,7 @@ document.getElementById("generate").addEventListener("click", async () => {
       async (response) => {
         let emailText = response.text;
 
-        let res = await fetch("http://localhost:8000/generate-reply", {
+        let res = await fetch("https://ai-email-reply-generator-9fts.onrender.com/generate-reply", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ emailText: emailText, tone: tone })
